@@ -1,0 +1,54 @@
+package com.example.calcularleo;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Button;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    public TextView textviewgasosa;
+    public TextView textviewproporcao;
+    public EditText quantidadegasolina;
+    public EditText proporcao;
+    public Button btnconsultar;
+    public Button btncalcularoleo;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+       quantidadegasolina = (EditText)findViewById(R.id.quantidadegasolina);
+       proporcao = (EditText)findViewById(R.id.proporcao);
+       btnconsultar = (Button)findViewById(R.id.btnconsultar);
+       btncalcularoleo = (Button)findViewById(R.id.btncalcularoleo);
+
+
+
+
+
+       btncalcularoleo.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               String txtquantidadegasolina = quantidadegasolina.getText().toString();
+               String novaproporcao = proporcao.getText().toString();
+               String partes[] = novaproporcao.split(":");
+
+
+
+               //int qtddegasolina = Integer.parseInt(quantidadegasolina.getText().toString());
+
+
+               Toast.makeText(MainActivity.this, "AS PARTES: " +partes[0], Toast.LENGTH_LONG).show();
+
+           }
+       });
+
+
+    }
+}
